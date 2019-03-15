@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StudyEnv4Application {
 
 	public static void main(String[] args) {
-		System.out.println("MyHello   contents change!!");
+		System.out.println("MyHello   contents change!! Yahoo!!");
 		SpringApplication.run(StudyEnv4Application.class, args);
 	}
 
