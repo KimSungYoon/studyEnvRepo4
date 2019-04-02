@@ -3,3 +3,7 @@ steps:
   args: ['package']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'aaa2', 'docker/']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'hello4:v1.0', 'gcr.io/studyenv4/hello4']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/studyenv4/hello4']
