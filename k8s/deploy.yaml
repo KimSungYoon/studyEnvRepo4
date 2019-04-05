@@ -13,11 +13,11 @@ spec:
     spec:
       containers:
         - image: gcr.io/studyenv4/hello4:v1
-          name: studyimg-node
           env:
           - name: CLOUDSDK_CONTAINER_CLUSTER
             value: "studyenv4-cluster"
           - name: CLOUDSDK_COMPUTE_ZONE
             value: "asia-northeast1-a"
+          name: studyimg-node
           ports:
             - containerPort: 8081
