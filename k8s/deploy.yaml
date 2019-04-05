@@ -5,11 +5,6 @@ metadata:
     name: studyimg-node
   name: studyimg-node
 spec:
-  env:
-    - name: CLOUDSDK_CONTAINER_CLUSTER
-      value: "studyenv4-cluster"
-    - name: CLOUDSDK_COMPUTE_ZONE
-      value: "asia-northeast1-a"
   replicas: 3
   template:
     metadata:
