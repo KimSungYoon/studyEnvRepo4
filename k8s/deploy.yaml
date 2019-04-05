@@ -20,4 +20,4 @@ spec:
           - name: CLOUDSDK_COMPUTE_ZONE
             value: "asia-northeast1-a"
           ports:
-            - containerPort: 8081  
+            - containerPort: 8081
