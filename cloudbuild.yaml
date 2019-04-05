@@ -12,6 +12,7 @@ steps:
 #  args: ['run', '-d', '-p', '8090:8080', 'gcr.io/studyenv4/hello4:v1']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['cluster-info']
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['create', '-f', 'k8s/deploy.yaml']
   env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
