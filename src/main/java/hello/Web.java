@@ -8,7 +8,7 @@ public class Web {
 
 	@RequestMapping
 	public String home() {
-		return "too hard";
+		return "This is Version 2";
 	}
 	
 }
