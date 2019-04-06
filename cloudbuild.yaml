@@ -1,6 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/mvn'
-  args: ['clean package']
+  args: ['clean']
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ['package']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'aaa2:v1', 'docker/']
 - name: 'gcr.io/cloud-builders/docker'
