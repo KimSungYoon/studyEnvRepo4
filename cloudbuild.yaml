@@ -24,7 +24,7 @@ steps:
 
 ##docker 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'hello_img:v6', 'docker/']
+  args: ['build', '-t', 'hello_img:v6', 'docker/'] 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['tag', 'hello_img:v6', 'gcr.io/studyenv4/hello_img:v6']
 - name: 'gcr.io/cloud-builders/docker'
