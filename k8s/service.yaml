@@ -4,8 +4,8 @@ metadata:
   labels:
     name: studyimg-service
   name: studyimg-service
-  annotations:
-    kubernetes.io/ingress.global-static-ip-name: "ip-address"
+#  annotations:
+#    kubernetes.io/ingress.global-static-ip-name: "ip-address"
 spec:
   ports:
   - protocol: TCP
