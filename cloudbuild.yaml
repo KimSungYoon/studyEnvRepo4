@@ -8,12 +8,12 @@ steps:
   args: ['tag', 'hello_img:v1', 'gcr.io/studyenv4/hello_img:v1']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/studyenv4/hello_img:v1']
-#kubectl
+#kubectl  
 #- name: 'gcr.io/cloud-builders/kubectl'
-#  args: ['delete', 'service', 'studyimg-service']
+#  args: ['delete', 'service', 'hello-service']
 #  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 #- name: 'gcr.io/cloud-builders/kubectl'
-#  args: ['delete', 'deploy', 'studyimg-node']
+#  args: ['delete', 'deploy', 'hello-node']
 #  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['create', '-f', 'k8s/deploy.yaml']
