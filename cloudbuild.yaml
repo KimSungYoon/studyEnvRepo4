@@ -1,23 +1,34 @@
 steps:
+
+#mvn
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['clean', 'package']
+
 #docker 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'hello_img:v1', 'docker/']
+  args: ['build', '-t', 'hello_img:v2', 'docker/']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'hello_img:v1', 'gcr.io/studyenv4/hello_img:v1']
+  args: ['tag', 'hello_img:v2', 'gcr.io/studyenv4/hello_img:v2']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/studyenv4/hello_img:v1']
-#kubectl  
+  args: ['push', 'gcr.io/studyenv4/hello_img:v2']
+
+#kubectl
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['set', 'image', 'deployment', 'studyimg-node', 'studyimg-node=gcr.io/studyenv4/hello_img:v2' ]
+  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+
+ 
+
+#kubectl  delete and re creation
 #- name: 'gcr.io/cloud-builders/kubectl'
 #  args: ['delete', 'service', 'hello-service']
 #  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 #- name: 'gcr.io/cloud-builders/kubectl'
 #  args: ['delete', 'deploy', 'hello-node']
 #  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['create', '-f', 'k8s/deploy.yaml']
-  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
-- name: 'gcr.io/cloud-builders/kubectl'
-  args: ['create', '-f', 'k8s/service.yaml']
-  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+#- name: 'gcr.io/cloud-builders/kubectl'
+#  args: ['create', '-f', 'k8s/deploy.yaml']
+#  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
+#- name: 'gcr.io/cloud-builders/kubectl'
+#  args: ['create', '-f', 'k8s/service.yaml']
+#  env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
