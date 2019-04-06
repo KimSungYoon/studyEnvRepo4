@@ -1,8 +1,8 @@
 steps:
 
 #mvn
-- name: 'gcr.io/cloud-builders/mvn'
-  args: ['clean', 'package']
+#- name: 'gcr.io/cloud-builders/mvn'
+#  args: ['clean', 'package']
 
 #docker 
 - name: 'gcr.io/cloud-builders/docker'
@@ -14,7 +14,7 @@ steps:
 
 #kubectl
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set', 'image', 'deployment', 'studyimg-node', 'studyimg-node=gcr.io/studyenv4/hello_img:v2' ]
+  args: ['set', 'image', 'deployment', 'hello-node', 'hello-node=gcr.io/studyenv4/hello_img:v2' ]
   env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 
  
