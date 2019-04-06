@@ -8,7 +8,7 @@ public class Web {
 
 	@RequestMapping("name")
 	public String hello() {
-		return "This is hello 6";
+		return "This is hello 8";
 	}
 	
 }
