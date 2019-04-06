@@ -8,7 +8,7 @@ public class Web {
 
 	@RequestMapping
 	public String home() {
-		return "hello studyEnv4!!";
+		return "hello studyEnv4!!  This is Revolution";
 	}
 	
 }

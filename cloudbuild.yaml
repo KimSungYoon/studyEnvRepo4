@@ -1,12 +1,12 @@
 steps:
-#- name: 'gcr.io/cloud-builders/mvn'
-#  args: ['package']
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build', '-t', 'aaa2:v1', 'docker/']
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['tag', 'aaa2:v1', 'gcr.io/studyenv4/hello4:v1']
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['push', 'gcr.io/studyenv4/hello4:v1']
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ['package']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'aaa2:v1', 'docker/']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'aaa2:v1', 'gcr.io/studyenv4/hello4:v1']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/studyenv4/hello4:v1']
 # 아래는 안쓰는 거
 #- name: 'gcr.io/cloud-builders/docker'
 #  args: ['run', '-d', '-p', '8090:8080', 'gcr.io/studyenv4/hello4:v1']
