@@ -11,9 +11,9 @@ public class Web {
 		return "This is hello 6";
 	}
 	
-	@RequestMapping("/world")
-	public String world() {
-		return "This is world 6";
-	}
+//	@RequestMapping("/world")
+//	public String world() {
+//		return "This is world 6";
+//	}
 }
  
