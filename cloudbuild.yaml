@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/mvn'
-  args: ['package']
+  args: ['repackage']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'aaa2:v1', 'docker/']
 - name: 'gcr.io/cloud-builders/docker'
