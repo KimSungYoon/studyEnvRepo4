@@ -16,9 +16,6 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment', 'hello-node', 'hello-node=gcr.io/studyenv4/hello_img:v5' ]
   env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
-
- 
-
 #kubectl  delete and re creation
 #- name: 'gcr.io/cloud-builders/kubectl'
 #  args: ['delete', 'service', 'hello-service']

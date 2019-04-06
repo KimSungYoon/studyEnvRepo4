@@ -6,10 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Web {
 
-	@RequestMapping
-	public String home() {
-		return "This is Version 5";
+	@RequestMapping("/hello")
+	public String hello() {
+		return "This is hello 1";
 	}
 	
+	@RequestMapping("/world")
+	public String world() {
+		return "This is world 1";
+	}
 }
  
