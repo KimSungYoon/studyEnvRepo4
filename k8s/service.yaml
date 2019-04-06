@@ -9,8 +9,9 @@ metadata:
 spec:
   ports:
   - protocol: TCP
-    port: 80
+    port: 8090
     targetPort: 8080
   selector:
     name: hello-node
   type: LoadBalancer
+  loadBalancerIP: 34.85.105.34

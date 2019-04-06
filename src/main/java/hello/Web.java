@@ -8,12 +8,12 @@ public class Web {
 
 	@RequestMapping("/hello")
 	public String hello() {
-		return "This is hello 1";
+		return "This is hello 6";
 	}
 	
 	@RequestMapping("/world")
 	public String world() {
-		return "This is world 1";
+		return "This is world 6";
 	}
 }
  
