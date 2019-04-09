@@ -7,16 +7,16 @@ steps:
 
 ##docker 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'hello_imgv:20', 'docker/']
+  args: ['build', '-t', 'hello_imgvv:21', 'docker/']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'hello_imgv:20', 'gcr.io/studyenv4/hello_imgv:20']
+  args: ['tag', 'hello_imgvv:21', 'gcr.io/studyenv4/hello_imgvv:21']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/studyenv4/hello_imgv:20']
+  args: ['push', 'gcr.io/studyenv4/hello_imgvv:21']
 
 
 ##kubectl re-deploy
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set', 'image', 'deployment', 'hello-node', 'hello-node=gcr.io/studyenv4/hello_imgv:20' ]
+  args: ['set', 'image', 'deployment', 'hello-node', 'hello-node=gcr.io/studyenv4/hello_imgvv:21' ]
   env: ["CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a","CLOUDSDK_CONTAINER_CLUSTER=studyenv4-cluster" ]
 
 
