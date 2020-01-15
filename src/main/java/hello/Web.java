@@ -8,7 +8,7 @@ public class Web {
 
 	@RequestMapping("name")
 	public String hello() {
-		return "This is hello Ver.21      Version Up";
+		return "This is hello Ver.22      Version Up";
 	}
 	
 }
